@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,6 +57,7 @@ public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFra
 
 		// Delete excape characters for double quotas 
 		// ToDo: not 2 insted 3 or?
+		System.out.println("messageValues[2] = " + messageValues[2]);
 		messageValues[2] = StringUtils.deleteAny(messageValues[2], "\"");
 
 		// Actually we only convert the GRAPHQLREQUEST frame type  
@@ -68,22 +68,11 @@ public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFra
 		if (!messageValues[2].equals(graphQLIOMessageType.toString()))
 			throw new WsfException();
 
-		// Read the Query 
-		Map<String, String> queryValue = new HashMap<>();
-		String query;
-
-		try {
-			queryValue = objectMapper.readValue(messageValues[3], HashMap.class);
-			query = queryValue.get("query");
-		} catch (Exception e) {
-			throw new WsfException();
-		}
-	
 		// Set local variables more readable 
 		fid=messageValues[0];
 		rid=messageValues[1];
 		type=graphQLIOMessageType;
-		data=query;
+		data=messageValues[3];
 
 		// Build Message  
 		return  WsfFrame.builder().fid(fid).rid(rid).type(type).data(data).build();
