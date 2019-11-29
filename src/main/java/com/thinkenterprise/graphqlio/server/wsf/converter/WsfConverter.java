@@ -79,9 +79,14 @@ public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFra
     
 	
 	public String createData(Set<String> set) {
+
         // ToDo : Build Response Data with JSON - JSON-field: data, JSON-Data: Array of sids 
         // "data":["5c989173-0eed-55b6-8f48-44890f621aaa"]
-		return null;
+		
+//        this.debug(1, `GraphQL: notification: peer=${cid}, sids=${sids.join(",")}`)
+//        try { wsf.send({ type: "GRAPHQL-NOTIFY", data: sids }) }
+				
+		return "\"data\":[" +  String.join(",", set) + "]";
 	}
 	
 	
