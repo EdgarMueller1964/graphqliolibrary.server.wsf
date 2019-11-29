@@ -57,7 +57,6 @@ public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFra
 
 		// Delete excape characters for double quotas 
 		// ToDo: not 2 insted 3 or?
-		System.out.println("messageValues[2] = " + messageValues[2]);
 		messageValues[2] = StringUtils.deleteAny(messageValues[2], "\"");
 
 		// Actually we only convert the GRAPHQLREQUEST frame type  
