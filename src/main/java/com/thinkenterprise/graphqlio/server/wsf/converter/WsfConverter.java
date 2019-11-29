@@ -32,7 +32,7 @@ public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFra
 			throw new WsfException();
 
 		// Create Frame from Response Message
-		String frame = "[" + message.getFid() + "," + message.getRid() + "," + "\""+ WsfFrameType.GRAPHQLRESPONSE + "\"" + "," + message.getData() + "]";
+		String frame = "[" + message.getFid() + "," + message.getRid() + "," + "\""+ frameType + "\"" + "," + message.getData() + "]";
 		return frame;
 	}
 
