@@ -1,12 +1,11 @@
 package com.thinkenterprise.graphqlio.server.wsf.converter;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.thinkenterprise.graphqlio.server.wsf.domain.WsfFrame;
 import com.thinkenterprise.graphqlio.server.wsf.domain.WsfFrameType;
 import com.thinkenterprise.graphqlio.server.wsf.exception.WsfException;
@@ -16,23 +15,32 @@ import com.thinkenterprise.graphqlio.server.wsf.exception.WsfException;
  */
 public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFrameConverter {
 
+	private final Logger logger = LoggerFactory.getLogger(WsfConverter.class);
+	
+	
 	private WsfFrameType frameType;	
 
-	private ObjectMapper objectMapper;
-
-	public WsfConverter(ObjectMapper objectMapper, WsfFrameType frameType) {
-		this.objectMapper = objectMapper;
+	public WsfConverter(WsfFrameType frameType) {
 		this.frameType = frameType;
 	}
 	
 		
 	@Override
 	public String convert(WsfFrame message) {
-		if(message.getType()!=frameType)
-			throw new WsfException();
+		
+		
+		if(message.getType()!=frameType) {
+			logger.warn(String.format("WsfConverter: Expected type (%s), got type (%s)", frameType, message.getType()));
+/*
+*			not necessary to throw an exception here.
+*			converter is able to handle message type
+* 
+*/
+			//			throw new WsfException();
+		}
 
-		// Create Frame from Response Message
-		String frame = "[" + message.getFid() + "," + message.getRid() + "," + "\""+ frameType + "\"" + "," + message.getData() + "]";
+		// Create frame from message
+		String frame = "[" + message.getFid() + "," + message.getRid() + "," + "\""+ message.getType() + "\"" + "," + message.getData() + "]";
 		return frame;
 	}
 
