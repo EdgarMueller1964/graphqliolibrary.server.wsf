@@ -26,6 +26,13 @@
  ******************************************************************************/
 package com.thinkenterprise.graphqlio.server.wsf.exception;
 
+/**
+ * Class for library exception
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
+
 public class WsfException  extends RuntimeException {
 
     /**

@@ -35,8 +35,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.cbor.CBORFactory;
 
 /**
- * CBORCodec
+ * Class for implementing codec CBOR
+ *
+ * @author Michael Schäfer
+ * @author Torsten Kühnert
  */
+
 public class WsfCBORCodec implements WsfCodec {
 
 	private static final ObjectMapper mapper = new ObjectMapper(new CBORFactory());

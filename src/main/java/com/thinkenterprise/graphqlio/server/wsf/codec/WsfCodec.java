@@ -27,8 +27,12 @@
 package com.thinkenterprise.graphqlio.server.wsf.codec;
 
 /**
- * Codec
+ * Interface for codecs, converting between String and byte[]
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
  */
+
 public interface WsfCodec {
 
 	String decode(byte[] data) throws Exception;

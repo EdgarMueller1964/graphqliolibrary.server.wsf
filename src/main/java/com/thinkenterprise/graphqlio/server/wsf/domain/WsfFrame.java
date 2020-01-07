@@ -26,6 +26,13 @@
  ******************************************************************************/
 package com.thinkenterprise.graphqlio.server.wsf.domain;
 
+/**
+ * Class for holding the inbound / outbound frame data
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
+
 public final class WsfFrame {
 
 	private String fid;

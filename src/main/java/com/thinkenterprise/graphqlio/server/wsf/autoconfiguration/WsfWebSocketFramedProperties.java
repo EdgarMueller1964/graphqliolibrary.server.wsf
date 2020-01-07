@@ -29,6 +29,13 @@ package com.thinkenterprise.graphqlio.server.wsf.autoconfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
+/**
+ * Class for library module configuration
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
+
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "graphqlio.websocketframed")
 public class WsfWebSocketFramedProperties {

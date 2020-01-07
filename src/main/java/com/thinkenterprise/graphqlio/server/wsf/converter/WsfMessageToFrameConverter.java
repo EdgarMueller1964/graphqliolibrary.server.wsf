@@ -28,6 +28,13 @@ package com.thinkenterprise.graphqlio.server.wsf.converter;
 
 import com.thinkenterprise.graphqlio.server.wsf.domain.WsfFrame;
 
+/**
+ * Interface for converter WsfFrame to String
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
+
 public interface WsfMessageToFrameConverter {
 	
 	String convert(WsfFrame message);

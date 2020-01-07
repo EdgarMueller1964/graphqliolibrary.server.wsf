@@ -31,8 +31,12 @@ import org.springframework.context.ApplicationEvent;
 import com.thinkenterprise.graphqlio.server.wsf.domain.WsfFrame;
 
 /**
- * InboundFrameEvent
+ * Class for outbound application event; answer to client
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
  */
+
 public class WsfOutboundFrameEvent extends ApplicationEvent {
 
     private static final long serialVersionUID = 1L;

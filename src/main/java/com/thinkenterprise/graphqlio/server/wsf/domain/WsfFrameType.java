@@ -26,6 +26,13 @@
  ******************************************************************************/
 package com.thinkenterprise.graphqlio.server.wsf.domain;
 
+/**
+ * Enumeration for some frame types
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
+
 public enum WsfFrameType {
 	GRAPHQLREQUEST {
 		@Override

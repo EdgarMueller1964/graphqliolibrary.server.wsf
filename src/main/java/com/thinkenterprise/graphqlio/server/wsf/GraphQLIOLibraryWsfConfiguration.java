@@ -26,7 +26,12 @@
  ******************************************************************************/
 package com.thinkenterprise.graphqlio.server.wsf;
 
-
+/**
+ * Class for library module configuration
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
 
 import javax.annotation.PostConstruct;
 
