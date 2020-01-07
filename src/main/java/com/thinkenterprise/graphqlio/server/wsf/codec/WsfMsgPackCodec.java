@@ -34,8 +34,12 @@ import org.msgpack.core.MessagePack;
 import org.msgpack.core.MessageUnpacker;
 
 /**
- * MsgPackCodec
+ * Class for implementing codec MsgPack
+ *
+ * @author Michael Schäfer
+ * @author Torsten Kühnert
  */
+
 public class WsfMsgPackCodec implements WsfCodec {
 
 	@Override

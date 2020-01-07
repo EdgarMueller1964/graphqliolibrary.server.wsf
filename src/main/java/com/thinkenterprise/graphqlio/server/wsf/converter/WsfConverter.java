@@ -37,8 +37,12 @@ import com.thinkenterprise.graphqlio.server.wsf.domain.WsfFrameType;
 import com.thinkenterprise.graphqlio.server.wsf.exception.WsfException;
 
 /**
- * WsfConverter
+ * Class for implementing converters for both directions
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
  */
+
 public class WsfConverter implements WsfFrameToMessageConverter, WsfMessageToFrameConverter {
 
 	private final Logger logger = LoggerFactory.getLogger(WsfConverter.class);

@@ -6,8 +6,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-
-
+/**
+ * Class for testing graphqlio as / within application
+ *
+ * @author Michael Schäfer
+ * @author Torsten Kühnert
+ */
 
 @Tag("annotations")
 @Tag("junit5")

@@ -26,6 +26,12 @@
  ******************************************************************************/
 package com.thinkenterprise.graphqlio.server.wsf;
 
+/**
+ * Interface for this library module
+ *
+ * @author Michael Schäfer
+ * @author Dr. Edgar Müller
+ */
 
 import java.lang.annotation.*;
 
