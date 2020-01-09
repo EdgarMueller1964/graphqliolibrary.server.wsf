@@ -40,10 +40,26 @@ public class SampleWsfCodec {
 	public static void main(String[] args) throws Exception {
 		String data = "this text is for excryption and decryption";
 
+		/*
+		 * codec CBOR
+		 */
 		WsfCodec codec = new WsfCBORCodec();
 		byte[] bytes = codec.encode(data);
 		String result = codec.decode(bytes);
 
+		System.out.println("CBOR:");
+		System.out.println("data   = " + data);
+		System.out.println("bytes  = " + Arrays.toString(bytes));
+		System.out.println("result = " + result);
+
+		/*
+		 * codec MsgPack
+		 */
+		codec = new WsfMsgPackCodec();
+		bytes = codec.encode(data);
+		result = codec.decode(bytes);
+
+		System.out.println("MsgPack:");
 		System.out.println("data   = " + data);
 		System.out.println("bytes  = " + Arrays.toString(bytes));
 		System.out.println("result = " + result);
